@@ -5,5 +5,23 @@
     <groupId>com.samplemicroservice</groupId>
     <artifactId>myapp</artifactId>
     <version>1.0</version>
-    <packaging>jar</packaging> <!-- Default, can be omitted. Replace with 'war' for a web application -->
+    <packaging>jar</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>com.samplemicroservice.MainClass</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
